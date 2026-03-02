@@ -40,7 +40,7 @@ const reasons = [
       <div 
         class="rounded-3xl overflow-hidden"
         style="
-          background-image: url('/public/BgPorqueElegirnos.jpg');
+          background-image: url('/BgPorqueElegirnos.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;

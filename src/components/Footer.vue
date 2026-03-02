@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear()
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <!-- Logo Section -->
               <div class="flex flex-col items-start">
-                <img src="/public/Logo-Aplick-Sub-Titulo.png" alt="Logo Aplick" class="h-14 w-auto mb-4">
+                <img src="/Logo-Aplick-Sub-Titulo.png" alt="Logo Aplick" class="h-14 w-auto mb-4">
                 <p class="text-white/60 text-sm leading-relaxed">
                   La plataforma digital que simplifica la cotización de seguros mediante inteligencia artificial.
                 </p>
