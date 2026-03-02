@@ -25,7 +25,7 @@ const steps = [
       <div 
         class="rounded-3xl overflow-hidden"
         style="
-          background-image: url('../../public/BgHowItWorks.webp');
+          background-image: url('../../public/BgHowItWorks.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
