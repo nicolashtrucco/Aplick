@@ -14,7 +14,7 @@ const toggleMenu = () => {
     <div class="flex items-center justify-between w-full max-w-2xl rounded-full px-6 py-3 transition-all duration-300" style="background: linear-gradient(135deg, rgba(25, 93, 76, 0.15) 0%, rgba(143, 207, 154, 0.08) 100%); border: 1px solid rgba(143, 207, 154, 0.25); backdrop-filter: blur(10px);">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <img src="/public/Logo-Aplick.png" alt="Logo-aplick" class="h-6 w-auto">
+        <img src="/Logo-Aplick.png" alt="Logo-aplick" class="h-6 w-auto">
       </div>
 
       <!-- Desktop Navigation -->
@@ -23,37 +23,31 @@ const toggleMenu = () => {
           href="#"
           class="text-white/80 hover:text-white text-xs font-medium transition-colors"
         >
-          Billetera
+          Inicio
         </a>
         <a
           href="#"
           class="text-white/80 hover:text-white text-xs font-medium transition-colors"
         >
-          Vivi en crypto
+          Nosotros
         </a>
         <a
           href="#"
           class="text-white/80 hover:text-white text-xs font-medium transition-colors"
         >
-          Comunidad
+          Cómo funciona
         </a>
         <a
           href="#"
           class="text-white/80 hover:text-white text-xs font-medium transition-colors"
         >
-          Aprendé
+          Coberturas
         </a>
         <a
           href="#"
           class="text-white/80 hover:text-white text-xs font-medium transition-colors"
         >
-          Transparencia
-        </a>
-        <a
-          href="#"
-          class="text-white/80 hover:text-white text-xs font-medium transition-colors"
-        >
-          Ayuda
+          Contacto
         </a>
       </div>
 
@@ -95,37 +89,31 @@ const toggleMenu = () => {
         href="#"
         class="text-white/80 hover:text-white block px-3 py-2 rounded-md text-sm font-medium transition-colors"
       >
-        Billetera
+      Inicio
       </a>
       <a
         href="#"
         class="text-white/80 hover:text-white block px-3 py-2 rounded-md text-sm font-medium transition-colors"
       >
-        Vivi en crypto
+      Nosotros
       </a>
       <a
         href="#"
         class="text-white/80 hover:text-white block px-3 py-2 rounded-md text-sm font-medium transition-colors"
       >
-        Comunidad
+      Cómo funciona
       </a>
       <a
         href="#"
         class="text-white/80 hover:text-white block px-3 py-2 rounded-md text-sm font-medium transition-colors"
       >
-        Aprendé
+      Coberturas
       </a>
       <a
         href="#"
         class="text-white/80 hover:text-white block px-3 py-2 rounded-md text-sm font-medium transition-colors"
       >
-        Transparencia
-      </a>
-      <a
-        href="#"
-        class="text-white/80 hover:text-white block px-3 py-2 rounded-md text-sm font-medium transition-colors"
-      >
-        Ayuda
+      Contacto
       </a>
     </div>
   </nav>
