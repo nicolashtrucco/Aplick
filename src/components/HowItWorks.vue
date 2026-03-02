@@ -19,14 +19,22 @@ const steps = [
 </script>
 
 <template>
-  <section class="w-full py-8">
+  <section class="w-full py-4">
     <div class="w-full">
       <!-- Main Container with Radial Gradient -->
-      <div class="rounded-3xl overflow-hidden" style="background: radial-gradient(circle at 30% 60%, rgba(143, 207, 154, 0.2) 0%, rgba(25, 93, 76, 0.15) 40%, rgba(26, 26, 26, 1) 100%);">
+      <div 
+        class="rounded-3xl overflow-hidden"
+        style="
+          background-image: url('../../public/BgHowItWorks.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        "
+      >
         <div class="px-6 sm:px-12 lg:px-16 py-16 sm:py-20">
           <!-- Header Section -->
           <div class="text-center mb-16">
-            <p class="text-sm font-medium text-[#8fcf9a] uppercase tracking-widest mb-4">
+            <p class="text-sm font-medium text-[#f7f7ad] uppercase tracking-widest mb-4">
               Cómo funciona
             </p>
             <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
