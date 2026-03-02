@@ -28,7 +28,7 @@ const coberturas = [
       <div 
         class="rounded-3xl overflow-hidden"
         style="
-          background-image: url('../../public/BgCoberturas.png');
+          background-image: url('../../public/BgCoberturas.webp');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
