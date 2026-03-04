@@ -13,7 +13,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div
     class="relative min-w-[300px] h-40 flex flex-col items-center justify-end px-6 py-4 rounded-2xl border border-[#8fcf9a]/50 transition-all duration-300 hover:border-[#8fcf9a]/70 overflow-visible"
-    style="background: linear-gradient(135deg, rgba(143, 207, 154, 0.12) 0%, rgba(25, 93, 76, 0.12) 100%); backdrop-filter: blur(8px);"
+    style="background: radial-gradient(circle at center bottom, rgba(143, 207, 154, 0.25) 0%, rgba(25, 93, 76, 0.15) 35%, rgba(26, 26, 26, 0.9) 100%); backdrop-filter: blur(12px);"
   >
     <!-- Icon (Sobresale arriba) -->
     <div :class="`absolute -top-12 ${iconSize} flex items-center justify-center z-20 pointer-events-none`">
