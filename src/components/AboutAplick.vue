@@ -1,22 +1,22 @@
 <script setup>
 const features = [
   {
-    icon: 'bi-lightning-fill',
+    icon: '/Rayo.png',
     title: 'Simple y Rápido',
     description: 'Cotiza tu seguro en segundos sin formularios complejos. Tecnología IA que entiende tus necesidades.',
   },
   {
-    icon: 'bi-shield-check',
+    icon: '/Money.webp',
     title: 'Accesible y Confiable',
     description: 'Seguros verificados y regulados. Protección real con transparencia total en cada paso.',
   },
   {
-    icon: 'bi-chat-dots-fill',
+    icon: '/Chat.png',
     title: 'Asistente IA 24/7',
     description: 'Nuestro chatbot inteligente en WhatsApp responde tus preguntas cuando las necesitas.',
   },
   {
-    icon: 'bi-percent',
+    icon: '/Check.png',
     title: 'Mejores Precios',
     description: 'Comparamos opciones para traerte las mejores coberturas al mejor precio del mercado.',
   },
@@ -30,41 +30,55 @@ const features = [
       <div 
         class="rounded-3xl overflow-hidden"
         style="
-          background-image: url('/BgAboutAplick.jpg');
+          background-image: url('/BgAboutAplick01.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
         "
       >
         <div class="px-6 sm:px-12 lg:px-16 py-16 sm:py-20">
-          <!-- Header Section -->
-          <div class="max-w-3xl mb-16">
-            <p class="text-sm font-medium text-[#f7f7ad] uppercase tracking-widest mb-4">
-              Sobre Aplick
-            </p>
-            <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
-              La tecnología que simplifica los seguros
-            </h2>
-            <p class="text-lg text-white/70 leading-relaxed">
-              APLICK es una plataforma digital que transforma la experiencia de cotizar seguros. Utilizamos inteligencia artificial integrada en WhatsApp para eliminar la complejidad tradicional del mundo de los seguros. Nuestro objetivo es convertir una tarea tediosa en algo simple, rápido y accesible para todos.
-            </p>
+          <!-- Two Column Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+            
+            <!-- Left Column: Content -->
+            <div class="max-w-3xl">
+              <p class="text-sm font-medium text-[#f7f7ad] uppercase tracking-widest mb-4">
+                Sobre Aplick
+              </p>
+              <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
+                La tecnología que simplifica los seguros
+              </h2>
+              <p class="text-lg text-white/70 leading-relaxed">
+                APLICK es una plataforma digital que transforma la experiencia de cotizar seguros. Utilizamos inteligencia artificial integrada en WhatsApp para eliminar la complejidad tradicional del mundo de los seguros. Nuestro objetivo es convertir una tarea tediosa en algo simple, rápido y accesible para todos.
+              </p>
+            </div>
+
+            <!-- Right Column: Empty (para mantener layout) -->
+            <div></div>
           </div>
 
-          <!-- Features Grid - Below Content -->
+          <!-- Features Grid (debajo del texto, full width) -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div v-for="(feature, index) in features" :key="index" class="group flex flex-col items-center text-center">
-              <!-- Icon -->
-              <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style="background: linear-gradient(135deg, #8fcf9a 0%, #195d4c 100%);">
-                <i :class="['bi', feature.icon, 'text-white text-base']"></i>
+            <div v-for="(feature, index) in features" :key="index" class="group relative rounded-2xl p-6 transition-all duration-300 backdrop-blur-xl hover:scale-105 overflow-visible" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+              <!-- Icon Image (Sobresale arriba) -->
+              <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 flex items-center justify-center z-20 pointer-events-none">
+                <img 
+                  :src="feature.icon" 
+                  :alt="feature.title" 
+                  class="h-full w-full object-contain drop-shadow-lg"
+                />
               </div>
 
-              <!-- Text -->
-              <h3 class="text-sm font-bold text-white mb-2">
-                {{ feature.title }}
-              </h3>
-              <p class="text-white/60 text-xs leading-relaxed">
-                {{ feature.description }}
-              </p>
+              <!-- Content (con espacio arriba para la imagen) -->
+              <div class="flex flex-col items-center text-center pt-6">
+                <!-- Text -->
+                <h3 class="text-sm font-bold text-white mb-2">
+                  {{ feature.title }}
+                </h3>
+                <p class="text-white/60 text-xs leading-relaxed">
+                  {{ feature.description }}
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    class="group relative w-full py-20"
+    class="group relative w-full py-20 overflow-hidden"
   >
     <div
       class="flex gap-4 animate-marquee whitespace-nowrap"
@@ -23,6 +23,9 @@ withDefaults(defineProps<Props>(), {
     >
       <slot />
       <slot />
+      <slot />
+      <slot />
+      
     </div>
   </div>
 </template>
@@ -33,13 +36,13 @@ withDefaults(defineProps<Props>(), {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% - 1rem));
+    transform: translateX(-100%);
   }
 }
 
 @keyframes marquee-reverse {
   from {
-    transform: translateX(calc(-100% - 1rem));
+    transform: translateX(-100%);
   }
   to {
     transform: translateX(0);
@@ -47,12 +50,12 @@ withDefaults(defineProps<Props>(), {
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee linear infinite;
   animation-duration: var(--duration, 20s);
 }
 
 .animate-marquee-reverse {
-  animation: marquee-reverse 20s linear infinite;
+  animation: marquee-reverse linear infinite;
   animation-duration: var(--duration, 20s);
 }
 </style>

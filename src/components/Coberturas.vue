@@ -18,7 +18,7 @@ const segurosActuales = () => {
       <div 
         class="rounded-3xl overflow-hidden relative"
         style="
-          background-image: url('/BgCoberturas01.jpg');
+          background-image: url('/BgCoberturas.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
