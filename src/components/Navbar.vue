@@ -18,34 +18,34 @@ const toggleMenu = () => {
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex space-x-6">
+      <div class="hidden md:flex space-x-8">
         <a
           href="#"
-          class="text-white/80 hover:text-white text-xs font-medium transition-colors"
+          class="text-white/80 hover:text-white text-sm font-medium transition-colors"
         >
           Inicio
         </a>
         <a
           href="#"
-          class="text-white/80 hover:text-white text-xs font-medium transition-colors"
+          class="text-white/80 hover:text-white text-sm font-medium transition-colors"
         >
           Nosotros
         </a>
         <a
           href="#"
-          class="text-white/80 hover:text-white text-xs font-medium transition-colors"
+          class="text-white/80 hover:text-white text-sm font-medium transition-colors"
         >
           Cómo funciona
         </a>
         <a
           href="#"
-          class="text-white/80 hover:text-white text-xs font-medium transition-colors"
+          class="text-white/80 hover:text-white text-sm font-medium transition-colors"
         >
           Coberturas
         </a>
         <a
           href="#"
-          class="text-white/80 hover:text-white text-xs font-medium transition-colors"
+          class="text-white/80 hover:text-white text-sm font-medium transition-colors"
         >
           Contacto
         </a>
