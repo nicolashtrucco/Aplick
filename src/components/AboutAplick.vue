@@ -46,7 +46,7 @@ const features = [
                 Sobre Aplick
               </p>
               <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
-                La tecnología que simplifica los seguros
+                La tecnología que <span style="color: #8fcf9a;">simplifica los seguros</span>
               </h2>
               <p class="text-lg text-white/70 leading-relaxed">
                 APLICK es una plataforma digital que transforma la experiencia de cotizar seguros. Utilizamos inteligencia artificial integrada en WhatsApp para eliminar la complejidad tradicional del mundo de los seguros. Nuestro objetivo es convertir una tarea tediosa en algo simple, rápido y accesible para todos.
