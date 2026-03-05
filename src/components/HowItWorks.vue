@@ -7,7 +7,7 @@ const steps = [
   },
   {
     number: 2,
-    title: 'Respondé 3 preguntas',
+    title: 'Respondé las preguntas',
     description: 'Cuestionario simple sobre tu seguro.',
   },
   {
