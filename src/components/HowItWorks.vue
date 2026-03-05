@@ -53,7 +53,7 @@ const steps = [
             
             <!-- Left Column: Chat Image -->
             <div class="w-full lg:w-1/2 flex justify-center">
-              <img src="/ChatWsp.png" alt="Chat WhatsApp" class="max-w-sm w-full h-auto rounded-3xl shadow-2xl">
+              <img src="/ChatWsp01.png" alt="Chat WhatsApp" class="max-w-sm w-full h-auto rounded-3xl shadow-2xl">
             </div>
 
             <!-- Right Column: Steps Cards -->
