@@ -25,7 +25,7 @@ const steps = [
       <div 
         class="rounded-3xl overflow-hidden"
         style="
-          background-image: url('/BgHowItWorks.jpg');
+          background-image: url('/BgHowItWorks01.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -38,9 +38,9 @@ const steps = [
               Cómo funciona
             </p>
             <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-4">
-              Cotizá tu seguro<br>en menos de 1 minuto.
+              Cotizá tu seguro<br><span style="color: #8fcf9a;">en menos de 1 minuto.</span>
             </h2>
-            <p class="text-xl text-white/80 font-semibold mb-6">
+            <p class="text-xl font-semibold mb-6" style="color: #8fcf9a;">
               Desde WhatsApp. Sin formularios.
             </p>
             <p class="text-lg text-white/70 max-w-2xl mx-auto">
