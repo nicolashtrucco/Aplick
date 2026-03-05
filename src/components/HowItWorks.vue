@@ -40,7 +40,7 @@ const steps = [
             <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-4">
               Cotizá tu seguro<br><span style="color: #8fcf9a;">en menos de 1 minuto.</span>
             </h2>
-            <p class="text-xl font-semibold mb-6" style="color: #8fcf9a;">
+            <p class="text-xl font-medium mb-6 text-white">
               Desde WhatsApp. Sin formularios.
             </p>
             <p class="text-lg text-white/70 max-w-2xl mx-auto">
