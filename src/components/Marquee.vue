@@ -2,12 +2,18 @@
 interface Props {
   reverse?: boolean
   pauseOnHover?: boolean
+  repeat?: number
 }
 
 withDefaults(defineProps<Props>(), {
   reverse: false,
   pauseOnHover: true,
+  repeat: 6,
 })
+
+const getRepeatedSlots = (count: number) => {
+  return Array.from({ length: count }, (_, i) => i)
+}
 </script>
 
 <template>
@@ -21,11 +27,9 @@ withDefaults(defineProps<Props>(), {
         'group-hover:[animation-play-state:paused]': pauseOnHover,
       }"
     >
-      <slot />
-      <slot />
-      <slot />
-      <slot />
-      
+      <template v-for="i in getRepeatedSlots(repeat)" :key="i">
+        <slot />
+      </template>
     </div>
   </div>
 </template>

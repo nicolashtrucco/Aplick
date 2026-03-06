@@ -87,6 +87,9 @@ const segurosActuales = () => {
             class="pointer-events-none fixed inset-y-0 right-0 w-1/6 bg-gradient-to-l from-black to-transparent"
           />
         </div>
+
+        <!-- Bottom Black Gradient Overlay -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black pointer-events-none z-10"></div>
       </div>
     </div>
   </section>

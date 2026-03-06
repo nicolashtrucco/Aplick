@@ -11,11 +11,9 @@ import Footer from './components/Footer.vue'
   <div class="bg-black">
     <Header />
     <Coberturas />
-    <div class="mt-4 mx-4 sm:mx-6 lg:mx-8">
-      <AboutAplick />
-      <HowItWorks />
-      <PorqueElegirnos />
-    </div>
+    <AboutAplick />
+    <HowItWorks />
+    <PorqueElegirnos />
     <Footer />
   </div>
 </template>
