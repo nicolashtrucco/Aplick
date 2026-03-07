@@ -3,12 +3,14 @@ interface Props {
   reverse?: boolean
   pauseOnHover?: boolean
   repeat?: number
+  mobileOptimized?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
   reverse: false,
   pauseOnHover: true,
   repeat: 6,
+  mobileOptimized: false,
 })
 
 const getRepeatedSlots = (count: number) => {
@@ -22,10 +24,11 @@ const getRepeatedSlots = (count: number) => {
   >
     <div class="overflow-hidden w-full h-full">
       <div
-        class="flex flex-col gap-4 animate-marquee-vertical"
+        class="flex flex-col gap-4 lg:gap-4 animate-marquee-vertical"
         :class="{
           'animate-marquee-vertical-reverse': reverse,
           'group-hover:[animation-play-state:paused]': pauseOnHover,
+          'gap-1': mobileOptimized,
         }"
       >
         <template v-for="i in getRepeatedSlots(repeat)" :key="i">

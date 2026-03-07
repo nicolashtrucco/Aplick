@@ -69,26 +69,27 @@ const reasons = [
         </div>
 
         <!-- Right Column: Vertical Carousel -->
-        <div class="flex-1 w-full lg:w-auto flex items-center justify-center">
-          <div class="relative overflow-hidden rounded-2xl h-80" style="mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);">
+        <div class="flex-1 w-full lg:w-auto flex items-center justify-center px-2 lg:px-0">
+          <div class="relative overflow-hidden rounded-2xl h-80 w-full lg:w-auto max-w-xs lg:max-w-none" style="mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);">
             <MarqueeVertical
               :pause-on-hover="true"
               :repeat="8"
+              :mobile-optimized="true"
               class="[--duration:120s] w-full"
             >
-              <div v-for="reason in reasons" :key="reason.title" class="group relative rounded-2xl p-6 transition-all duration-300 backdrop-blur-xl overflow-visible mx-2 flex-shrink-0" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); width: 500px; height: fit-content;">
+              <div v-for="reason in reasons" :key="reason.title" class="reason-card group relative rounded-2xl transition-all duration-300 backdrop-blur-xl overflow-visible flex-shrink-0" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
                 
                 <!-- Icon Circle (Sobresale arriba) -->
-                <div class="absolute -top-6 left-6 flex items-center justify-center w-12 h-12 rounded-full text-xl z-20" style="background: linear-gradient(135deg, #8fcf9a 0%, #195d4c 100%);">
+                <div class="icon-circle absolute flex items-center justify-center rounded-full z-20" style="background: linear-gradient(135deg, #8fcf9a 0%, #195d4c 100%);">
                   <i :class="`bi ${reason.icon} text-white`"></i>
                 </div>
 
                 <!-- Content -->
-                <div class="pt-4 w-full">
-                  <h3 class="text-lg font-bold mb-2" style="color: #8fcf9a;">
+                <div class="card-content">
+                  <h3 class="card-title font-bold" style="color: #8fcf9a;">
                     {{ reason.title }}
                   </h3>
-                  <p class="text-white/60 text-sm leading-relaxed">
+                  <p class="card-description text-white/60 leading-relaxed">
                     {{ reason.description }}
                   </p>
                 </div>
@@ -104,4 +105,63 @@ const reasons = [
 
 <style scoped>
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css');
+
+@media (max-width: 1023px) {
+  .reason-card {
+    width: 100% !important;
+    max-width: 400px !important;
+    padding: 16px !important;
+    margin: 4px auto !important;
+  }
+
+  .reason-card .icon-circle {
+    width: 40px;
+    height: 40px;
+    top: -16px;
+    left: 16px;
+    font-size: 16px;
+  }
+
+  .reason-card .card-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .reason-card .card-description {
+    font-size: 12px;
+  }
+
+  .reason-card .card-content {
+    padding-top: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reason-card {
+    width: 500px !important;
+    padding: 24px !important;
+    margin: 8px !important;
+  }
+
+  .reason-card .icon-circle {
+    width: 48px;
+    height: 48px;
+    top: -24px;
+    left: 24px;
+    font-size: 20px;
+  }
+
+  .reason-card .card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .reason-card .card-description {
+    font-size: 14px;
+  }
+
+  .reason-card .card-content {
+    padding-top: 16px;
+  }
+}
 </style>
