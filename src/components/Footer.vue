@@ -9,67 +9,65 @@ const currentYear = new Date().getFullYear()
 
     <div class="w-full px-6 sm:px-12 lg:px-16 py-16 sm:py-20 relative z-20 mt-12">
       <!-- Footer Content Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div class="flex flex-col md:flex md:flex-row md:items-start gap-8 md:gap-16 mb-12">
         <!-- Logo Section -->
-        <div class="flex flex-col items-start">
+        <div class="flex flex-col items-start shrink-0">
           <img src="/Logo-Aplick-Sub-Titulo.png" alt="Logo Aplick" class="h-14 w-auto mb-4">
-          <p class="text-white/60 text-sm leading-relaxed">
+          <p class="text-white/60 text-sm leading-relaxed max-w-xs">
             La plataforma digital que simplifica la cotización de seguros mediante inteligencia artificial.
           </p>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-[#f7f7ad] font-bold mb-4">Enlaces</h4>
-          <ul class="space-y-2">
-            <li>
-              <a href="#inicio" class="text-white/60 hover:text-white text-sm transition-colors">
-                Inicio
-              </a>
-            </li>
-            <li>
-              <a href="#coberturas" class="text-white/60 hover:text-white text-sm transition-colors">
-                Coberturas
-              </a>
-            </li>
-            <li>
-              <a href="#nosotros" class="text-white/60 hover:text-white text-sm transition-colors">
-                Nosotros
-              </a>
-            </li>
-            <li>
-              <a href="#como-funciona" class="text-white/60 hover:text-white text-sm transition-colors">
-                Cómo Funciona
-              </a>
-            </li>
-            <li>
-              <a href="#ventajas" class="text-white/60 hover:text-white text-sm transition-colors">
-                Ventajas
-              </a>
-            </li>
-          </ul>
-        </div>
+        <!-- Links Container (Mobile and Desktop: flex row centered) -->
+        <div class="flex flex-row gap-16 md:gap-32 flex-1 md:justify-center">
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-[#f7f7ad] font-bold mb-4">Enlaces</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#coberturas" class="text-white/60 hover:text-white text-sm transition-colors">
+                  Coberturas
+                </a>
+              </li>
+              <li>
+                <a href="#nosotros" class="text-white/60 hover:text-white text-sm transition-colors">
+                  Nosotros
+                </a>
+              </li>
+              <li>
+                <a href="#como-funciona" class="text-white/60 hover:text-white text-sm transition-colors">
+                  Cómo Funciona
+                </a>
+              </li>
+              <li>
+                <a href="#ventajas" class="text-white/60 hover:text-white text-sm transition-colors">
+                  Ventajas
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <!-- Legal Links -->
-        <div>
-          <h4 class="text-[#f7f7ad] font-bold mb-4">Legal</h4>
-          <ul class="space-y-2">
-            <li>
-              <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
-                Términos y Condiciones
-              </a>
-            </li>
-            <li>
-              <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
-                Política de Privacidad
-              </a>
-            </li>
-            <li>
-              <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
-                Cookies
-              </a>
-            </li>
-          </ul>
+          <!-- Legal Links -->
+          <div>
+            <h4 class="text-[#f7f7ad] font-bold mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
+                  Términos y Condiciones
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
+                  Política de Privacidad
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
+                  Cookies
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -77,7 +75,7 @@ const currentYear = new Date().getFullYear()
       <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
 
       <!-- Copyright -->
-        <div class="text-center flex flex-row items-center justify-center gap-4">
+        <div class="text-center flex flex-col md:flex-row items-center justify-center gap-4">
           <p class="text-white/60 text-sm">
             © {{ currentYear }} Aplick. Todos los derechos reservados.
           </p>
@@ -85,7 +83,7 @@ const currentYear = new Date().getFullYear()
             href="https://web.seiminteractive.io/" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="transition-opacity"
+            class="transition-opacity hover:opacity-80"
           >
             <img 
               src="/SeimFooterBlanco.png" 
