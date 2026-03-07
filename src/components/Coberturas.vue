@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Marquee from './Marquee.vue'
+import Marquee from './ui/marquee/Marquee.vue'
 import SeguroCard from './SeguroCard.vue'
 import { segurosIndividuales, segurosCorporativos } from '@/data/seguros'
 
@@ -67,7 +67,7 @@ const segurosActuales = () => {
             <Marquee
               pause-on-hover
               :repeat="2"
-              class="[--duration:10s] w-full"
+              class="marquee-coberturas w-full p-0 py-20 [--gap:1rem]"
             >
               <SeguroCard
                 v-for="seguro in segurosActuales()"
@@ -95,3 +95,17 @@ const segurosActuales = () => {
     </div>
   </section>
 </template>
+
+<style scoped>
+@media (max-width: 1023px) {
+  .marquee-coberturas {
+    --duration: 40s;
+  }
+}
+
+@media (min-width: 1024px) {
+  .marquee-coberturas {
+    --duration: 60s;
+  }
+}
+</style>

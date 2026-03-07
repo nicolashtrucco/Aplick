@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { cn } from "@inspira-ui/plugins";
+import { cn } from "../../../lib/utils";
 withDefaults(
   defineProps<{
     class?: string;
@@ -36,7 +36,7 @@ withDefaults(
         cn(
           `flex shrink-0 justify-around gap-(--gap)`,
           vertical ? 'animate-marquee-vertical flex-col' : 'animate-marquee flex-row',
-          pauseOnHover ? 'group-hover:[animation-play-state:paused]' : '',
+          pauseOnHover ? 'group-hover:paused' : '',
         )
       "
     >

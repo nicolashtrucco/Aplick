@@ -9,11 +9,21 @@ import Footer from './components/Footer.vue'
 
 <template>
   <div class="bg-black">
-    <Header />
-    <Coberturas />
-    <AboutAplick />
-    <HowItWorks />
-    <PorqueElegirnos />
+    <section id="inicio">
+      <Header />
+    </section>
+    <section id="coberturas" class="scroll-mt-24">
+      <Coberturas />
+    </section>
+    <section id="nosotros" class="scroll-mt-24">
+      <AboutAplick />
+    </section>
+    <section id="como-funciona" class="scroll-mt-15">
+      <HowItWorks />
+    </section>
+    <section id="ventajas" class="scroll-mt-24">
+      <PorqueElegirnos />
+    </section>
     <Footer />
   </div>
 </template>
