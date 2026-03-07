@@ -58,44 +58,6 @@ import Aurora from './Aurora/Aurora.vue'
           </button>
         </div>
       </div>
-
-      <!-- Features Section -->
-      <!-- <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div class="feature-card group rounded-2xl p-8 transition-all duration-300 backdrop-blur-xl" style="background: linear-gradient(135deg, rgba(143, 207, 154, 0.08) 0%, rgba(25, 93, 76, 0.08) 100%); border: 1px solid rgba(143, 207, 154, 0.15);" onmouseover="this.style.borderColor='rgba(143, 207, 154, 0.3)'" onmouseout="this.style.borderColor='rgba(143, 207, 154, 0.15)'">
-            <div class="flex flex-col items-center text-center">
-              <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors">
-              <img src="/public/Tiempo.svg" alt="Cotización Rápida" class="w-14 h-auto">
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Cotización Rápida</h3>
-              <p class="text-white/70">Obtén cotizaciones de seguros en segundos sin complicaciones.</p>
-            </div>
-          </div>
-
-          
-          <div class="feature-card group rounded-2xl p-8 transition-all duration-300 backdrop-blur-xl" style="background: linear-gradient(135deg, rgba(143, 207, 154, 0.08) 0%, rgba(25, 93, 76, 0.08) 100%); border: 1px solid rgba(143, 207, 154, 0.15);" onmouseover="this.style.borderColor='rgba(143, 207, 154, 0.3)'" onmouseout="this.style.borderColor='rgba(143, 207, 154, 0.15)'">
-            <div class="flex flex-col items-center text-center">
-              <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors">
-                <img src="/public/Chat.svg" alt="Cotización Rápida" class="w-14 h-auto">
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Asistente IA en WhatsApp</h3>
-              <p class="text-white/70">Interactúa con nuestro asistente inteligente directamente en tu chat.</p>
-            </div>
-          </div>
-
-          
-          <div class="feature-card group rounded-2xl p-8 transition-all duration-300 backdrop-blur-xl" style="background: linear-gradient(135deg, rgba(143, 207, 154, 0.08) 0%, rgba(25, 93, 76, 0.08) 100%); border: 1px solid rgba(143, 207, 154, 0.15);" onmouseover="this.style.borderColor='rgba(143, 207, 154, 0.3)'" onmouseout="this.style.borderColor='rgba(143, 207, 154, 0.15)'">
-            <div class="flex flex-col items-center text-center">
-              <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors">
-                <img src="/public/Seguridad.svg" alt="Cotización Rápida" class="w-14 h-auto">
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Accesible y Confiable</h3>
-              <p class="text-white/70">Transforma la experiencia de contratar seguros con tecnología accesible.</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </section>
   </header>
 </template>

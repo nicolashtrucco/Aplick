@@ -60,29 +60,29 @@ const features = [
       </div>
 
       <!-- Features Grid (debajo del texto, full width) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div v-for="(feature, index) in features" :key="index" class="group relative rounded-2xl p-6 transition-all duration-300 backdrop-blur-xl hover:scale-105 overflow-visible" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-          <!-- Icon Image (Sobresale arriba) -->
-          <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 flex items-center justify-center z-20 pointer-events-none">
-            <img 
-              :src="feature.icon" 
-              :alt="feature.title" 
-              class="h-full w-full object-contain drop-shadow-lg"
-            />
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div v-for="(feature, index) in features" :key="index" class="group relative rounded-2xl p-6 transition-all duration-300 backdrop-blur-xl hover:scale-105 overflow-visible" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <!-- Icon Image (Sobresale arriba) -->
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 flex items-center justify-center z-20 pointer-events-none">
+                  <img 
+                    :src="feature.icon" 
+                    :alt="feature.title" 
+                    class="h-full w-full object-contain drop-shadow-lg"
+                  />
+                </div>
 
-          <!-- Content (con espacio arriba para la imagen) -->
-          <div class="flex flex-col items-center text-center pt-6">
-            <!-- Text -->
-            <h3 class="text-sm font-bold text-white mb-2">
-              {{ feature.title }}
-            </h3>
-            <p class="text-white/60 text-xs leading-relaxed">
-              {{ feature.description }}
-            </p>
-          </div>
-        </div>
-      </div>
+                <!-- Content (con espacio arriba para la imagen) -->
+                <div class="flex flex-col items-center text-center pt-6">
+                  <!-- Text -->
+                  <h3 class="text-sm font-bold text-white mb-2">
+                    {{ feature.title }}
+                  </h3>
+                  <p class="text-white/60 text-xs leading-relaxed">
+                    {{ feature.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
     </div>
   </section>
 </template>

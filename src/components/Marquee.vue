@@ -40,13 +40,13 @@ const getRepeatedSlots = (count: number) => {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 1rem));
   }
 }
 
 @keyframes marquee-reverse {
   from {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 1rem));
   }
   to {
     transform: translateX(0);

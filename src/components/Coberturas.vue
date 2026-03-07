@@ -37,11 +37,11 @@ const segurosActuales = () => {
         </div>
 
         <!-- Tabs -->
-        <div class="flex justify-center gap-4 mb-12">
+        <div class="flex justify-center gap-2 sm:gap-4 mb-12 flex-wrap sm:flex-nowrap">
           <button
             @click="activeTab = 'individuales'"
             :class="[
-              'px-6 py-3 rounded-full font-semibold transition-all duration-300',
+              'px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm',
               activeTab === 'individuales'
                 ? 'bg-[#8fcf9a] text-[#195d4c]'
                 : 'border-2 border-[#8fcf9a]/50 text-white hover:border-[#8fcf9a]'
@@ -52,7 +52,7 @@ const segurosActuales = () => {
           <button
             @click="activeTab = 'corporativos'"
             :class="[
-              'px-6 py-3 rounded-full font-semibold transition-all duration-300',
+              'px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm',
               activeTab === 'corporativos'
                 ? 'bg-[#8fcf9a] text-[#195d4c]'
                 : 'border-2 border-[#8fcf9a]/50 text-white hover:border-[#8fcf9a]'
@@ -64,18 +64,19 @@ const segurosActuales = () => {
 
         <!-- Carousel (Full width centered) -->
         <div class="relative w-full flex-1 flex items-center justify-center overflow-visible pb-16">
-          <Marquee
-            pause-on-hover
-            class="[--duration:30s] w-full"
-          >
-            <SeguroCard
-              v-for="seguro in segurosActuales()"
-              :key="seguro.id"
-              :title="seguro.title.replace('Cotizar Seguro ', '')"
-              :icon="seguro.icon"
-              :iconSize="seguro.iconSize"
-            />
-          </Marquee>
+            <Marquee
+              pause-on-hover
+              :repeat="2"
+              class="[--duration:10s] w-full"
+            >
+              <SeguroCard
+                v-for="seguro in segurosActuales()"
+                :key="seguro.id"
+                :title="seguro.title"
+                :icon="seguro.icon"
+                :iconSize="seguro.iconSize"
+              />
+            </Marquee>
 
           <!-- Left Gradient (Dark) from page edge -->
           <div
