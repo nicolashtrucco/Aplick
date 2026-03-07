@@ -56,7 +56,7 @@ const steps = [
         
         <!-- Left Column: Chat Image -->
         <div class="w-full lg:w-1/2 flex justify-center items-center" style="min-height: 800px;">
-          <img src="/celular-nuevo.png" alt="Chat WhatsApp" style="max-width: 500px; width: 100%; height: auto;">
+          <img src="/celular-nuevo01.png" alt="Chat WhatsApp" style="max-width: 350px; width: 100%; height: auto;">
         </div>
 
         <!-- Right Column: Steps Cards -->

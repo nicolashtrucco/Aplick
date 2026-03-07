@@ -1,11 +1,9 @@
 <script setup>
-import Navbar from './Navbar.vue'
 import Aurora from './Aurora/Aurora.vue'
 </script>
 
 <template>
   <header class="w-full">
-    <Navbar />
 
     <!-- Hero Section -->
     <section 

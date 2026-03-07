@@ -23,23 +23,28 @@ const currentYear = new Date().getFullYear()
           <h4 class="text-[#f7f7ad] font-bold mb-4">Enlaces</h4>
           <ul class="space-y-2">
             <li>
-              <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
+              <a href="#inicio" class="text-white/60 hover:text-white text-sm transition-colors">
                 Inicio
               </a>
             </li>
             <li>
-              <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
+              <a href="#coberturas" class="text-white/60 hover:text-white text-sm transition-colors">
                 Coberturas
               </a>
             </li>
             <li>
-              <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
-                Sobre Nosotros
+              <a href="#nosotros" class="text-white/60 hover:text-white text-sm transition-colors">
+                Nosotros
               </a>
             </li>
             <li>
-              <a href="#" class="text-white/60 hover:text-white text-sm transition-colors">
-                Contacto
+              <a href="#como-funciona" class="text-white/60 hover:text-white text-sm transition-colors">
+                Cómo Funciona
+              </a>
+            </li>
+            <li>
+              <a href="#ventajas" class="text-white/60 hover:text-white text-sm transition-colors">
+                Ventajas
               </a>
             </li>
           </ul>
@@ -72,11 +77,23 @@ const currentYear = new Date().getFullYear()
       <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
 
       <!-- Copyright -->
-      <div class="text-center">
-        <p class="text-white/60 text-sm">
-          © {{ currentYear }} Aplick. Todos los derechos reservados.
-        </p>
-      </div>
+        <div class="text-center flex flex-row items-center justify-center gap-4">
+          <p class="text-white/60 text-sm">
+            © {{ currentYear }} Aplick. Todos los derechos reservados.
+          </p>
+          <a 
+            href="https://web.seiminteractive.io/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="transition-opacity"
+          >
+            <img 
+              src="/SeimFooterBlanco.png" 
+              alt="Seim Interactive" 
+              class="h-6 w-auto"
+            >
+          </a>
+        </div>
     </div>
   </footer>
 </template>

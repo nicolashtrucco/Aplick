@@ -1,5 +1,6 @@
 <script setup>
 import Header from './components/Header.vue'
+import Navbar from './components/Navbar.vue'
 import HowItWorks from './components/HowItWorks.vue'
 import Coberturas from './components/Coberturas.vue'
 import AboutAplick from './components/AboutAplick.vue'
@@ -9,6 +10,7 @@ import Footer from './components/Footer.vue'
 
 <template>
   <div class="bg-black">
+    <Navbar />
     <section id="inicio">
       <Header />
     </section>
