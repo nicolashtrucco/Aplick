@@ -66,7 +66,7 @@ onMounted(() => {
       border: '1px solid rgba(255, 255, 255, 0.15)',
       backdropFilter: 'blur(10px)',
       width: '100%',
-      height: '96vh',
+      height: '96dvh',
       display: 'flex',
       flexDirection: 'column'
     } : {
