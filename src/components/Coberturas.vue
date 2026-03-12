@@ -37,7 +37,7 @@ const segurosActuales = () => {
         </div>
 
         <!-- Tabs -->
-        <div class="flex justify-center gap-2 sm:gap-4 mb-12 flex-wrap sm:flex-nowrap">
+        <!-- <div class="flex justify-center gap-2 sm:gap-4 mb-12 flex-wrap sm:flex-nowrap">
           <button
             @click="activeTab = 'individuales'"
             :class="[
@@ -60,11 +60,11 @@ const segurosActuales = () => {
           >
             Seguros Corporativos
           </button>
-        </div>
+        </div> -->
 
         <!-- Carousel (Full width centered) -->
-        <div class="relative w-full flex-1 flex items-center justify-center overflow-visible pb-16">
-            <Marquee
+        <!-- <div class="relative w-full flex-1 flex items-center justify-center overflow-visible pb-16"> -->
+            <!-- <Marquee
               pause-on-hover
               :repeat="2"
               class="marquee-coberturas w-full p-0 py-20 [--gap:1rem]"
@@ -76,17 +76,41 @@ const segurosActuales = () => {
                 :icon="seguro.icon"
                 :iconSize="seguro.iconSize"
               />
-            </Marquee>
+            </Marquee> -->
 
           <!-- Left Gradient (Dark) from page edge -->
-          <div
+          <!-- <div
             class="pointer-events-none fixed inset-y-0 left-0 w-1/6 bg-gradient-to-r from-black to-transparent"
-          />
+          /> -->
 
           <!-- Right Gradient (Dark) from page edge -->
-          <div
+          <!-- <div
             class="pointer-events-none fixed inset-y-0 right-0 w-1/6 bg-gradient-to-l from-black to-transparent"
-          />
+          /> -->
+        <!-- </div> -->
+
+        <!-- Featured Cards Section -->
+        <div class="relative z-20 px-4 sm:px-6 lg:px-8 md:mt-20 mb-32 md:mb-20">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Card 1: Seguro Auto -->
+            <SeguroCard
+              title="Seguro Auto"
+              icon="/3d-car.png"
+              iconSize="h-32 w-32"
+            />
+            <!-- Card 2: Seguro Hogar -->
+            <SeguroCard
+              title="Seguro Hogar"
+              icon="/documento.webp"
+              iconSize="h-24 w-24"
+            />
+            <!-- Card 3: Seguro ART -->
+            <SeguroCard
+              title="Seguro ART"
+              icon="/fabrica.webp"
+              iconSize="h-32 w-32"
+            />
+          </div>
         </div>
 
         <!-- Bottom Black Gradient Overlay -->

@@ -52,30 +52,35 @@ const steps = [
       </div>
 
       <!-- Flex Layout: Image + Steps -->
-      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
         
         <!-- Left Column: Chat Image -->
-        <div class="w-full lg:w-1/2 flex justify-center items-center" style="min-height: 800px;">
+        <!-- <div class="w-full lg:w-1/2 flex justify-center items-center" style="min-height: 800px;">
           <img src="/celular-nuevo01.png" alt="Chat WhatsApp" style="max-width: 350px; width: 100%; height: auto;">
-        </div>
+        </div> -->
 
         <!-- Right Column: Steps Cards -->
-        <div class="w-full lg:w-1/2 space-y-6">
-          <div v-for="step in steps" :key="step.number" class="group relative rounded-2xl p-6 transition-all duration-300 backdrop-blur-xl overflow-visible" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="w-full lg:w-1/2 space-y-6 flex flex-col mt-10">
+          <div v-for="step in steps" :key="step.number" class="step-card group relative rounded-2xl p-6 transition-all duration-300 backdrop-blur-xl overflow-hidden">
             
-            <!-- Step Number (Sobresale arriba) -->
-            <div class="absolute -top-6 left-6 flex items-center justify-center w-12 h-12 rounded-full text-lg font-black text-white z-20" style="background: linear-gradient(135deg, #8fcf9a 0%, #195d4c 100%);">
-              {{ step.number }}
-            </div>
+            <!-- Content with Step Number -->
+            <div class="relative z-10">
+              <!-- Step Number and Title -->
+              <div class="flex items-start gap-3">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full text-sm font-black text-white shrink-0 mt-0.5" style="background: linear-gradient(135deg, #8fcf9a 0%, #195d4c 100%);">
+                  {{ step.number }}
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white mb-0">
+                    {{ step.title }}
+                  </h3>
+                  <!-- Description -->
+                  <p class="text-white/60 text-sm leading-relaxed mt-1">
+                    {{ step.description }}
+                  </p>
+                </div>
+              </div>
 
-            <!-- Content -->
-            <div class="pt-4">
-              <h3 class="text-lg font-bold text-white mb-2">
-                {{ step.title }}
-              </h3>
-              <p class="text-white/60 text-sm leading-relaxed">
-                {{ step.description }}
-              </p>
             </div>
           </div>
 
@@ -118,14 +123,14 @@ const steps = [
   cursor: pointer;
 }
 
-.button-glow::before {
+/* .button-glow::before {
   content: '';
   position: absolute;
   inset: -10%;
   background-image: linear-gradient(90deg, transparent, rgba(143, 207, 154, 0.8), transparent);
   animation: slideBorder 2s ease-in-out infinite;
   z-index: 1;
-}
+} */
 
 .button-glow::after {
   content: '';
@@ -139,5 +144,26 @@ const steps = [
 .button-inner {
   position: relative;
   z-index: 3;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(90deg, transparent, rgba(143, 207, 154, 0.8), transparent);
+  border-radius: 1rem;
+  animation: slideBorder 2s ease-in-out infinite;
+  z-index: -1;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 </style>
