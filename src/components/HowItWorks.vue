@@ -85,7 +85,7 @@ const steps = [
           </div>
 
           <!-- CTA Button -->
-          <div class="flex justify-start mt-8">
+          <div class="flex justify-center mt-8">
             <button class="button-glow">
               <div class="button-inner">
                 Comenzar ahora
