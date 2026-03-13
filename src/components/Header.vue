@@ -50,7 +50,7 @@ import Aurora from './Aurora/Aurora.vue'
           </button>
           <button class="button-glow">
             <div class="button-inner">
-              Llego tu Asistente IA
+              Llegó tu Asistente IA
               <span class="ml-2">→</span>
             </div>
           </button>

@@ -94,7 +94,7 @@ const segurosActuales = () => {
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- Card 1: Seguro Auto -->
             <SeguroCard
-              title="Seguro Auto"
+              title="Seguro Automotor"
               icon="/3d-car.png"
               iconSize="h-32 w-32"
             />
@@ -106,7 +106,7 @@ const segurosActuales = () => {
             />
             <!-- Card 3: Seguro ART -->
             <SeguroCard
-              title="Seguro ART"
+              title="Seguro Accidente Personal"
               icon="/fabrica.webp"
               iconSize="h-32 w-32"
             />
