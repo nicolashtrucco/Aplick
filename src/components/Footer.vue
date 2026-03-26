@@ -79,18 +79,34 @@ const currentYear = new Date().getFullYear()
           <p class="text-white/60 text-sm">
             © {{ currentYear }} Aplick. Todos los derechos reservados.
           </p>
-          <a 
-            href="https://web.seiminteractive.io/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="transition-opacity hover:opacity-80"
-          >
-            <img 
-              src="/SeimFooterBlanco.png" 
-              alt="Seim Interactive" 
-              class="h-6 w-auto"
+          
+          <!-- Logos Container -->
+          <div class="flex flex-row items-center justify-center gap-4">
+            <a 
+              href="https://web.seiminteractive.io/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="transition-opacity hover:opacity-80"
             >
-          </a>
+              <img 
+                src="/SeimFooterBlanco.png" 
+                alt="Seim Interactive" 
+                class="h-6 w-auto"
+              >
+            </a>
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="transition-opacity hover:opacity-80"
+            >
+              <img 
+                src="/logotipos_logotipodescriptorv2 negativo.png" 
+                alt="Byloa Agency" 
+                class="h-6 w-auto"
+              >
+            </a>
+          </div>
         </div>
     </div>
   </footer>
