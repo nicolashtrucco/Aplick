@@ -95,7 +95,7 @@ const currentYear = new Date().getFullYear()
               >
             </a>
             <a 
-              href="#" 
+              href="https://byloa.agency/" 
               target="_blank" 
               rel="noopener noreferrer"
               class="transition-opacity hover:opacity-80"
