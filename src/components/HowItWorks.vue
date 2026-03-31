@@ -1,4 +1,7 @@
-<script setup>
+<script setup lang="ts">
+import gsap from 'gsap'
+import { onMounted } from 'vue'
+
 const steps = [
   {
     number: 1,
@@ -16,11 +19,118 @@ const steps = [
     description: 'Múltiples opciones en segundos.',
   },
 ]
+
+onMounted(() => {
+  // Usar Intersection Observer para animar cuando la sección es visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        entry.target.classList.add('animated')
+        animateHowItWorks()
+      }
+    })
+  }, { threshold: 0.2 })
+
+  const section = document.querySelector('[data-howitworks-section]')
+  if (section) {
+    observer.observe(section)
+  }
+})
+
+const animateHowItWorks = () => {
+  const tl = gsap.timeline()
+
+  // Animar etiqueta
+  tl.from('.howitworks-label', {
+    duration: 0.6,
+    opacity: 0,
+    y: 20,
+    ease: 'power3.out'
+  }, 0)
+
+  // Animar título
+  tl.from('.howitworks-title', {
+    duration: 0.8,
+    opacity: 0,
+    y: 30,
+    ease: 'power3.out'
+  }, 0.2)
+
+  // Animar subtítulo
+  tl.from('.howitworks-subtitle', {
+    duration: 0.8,
+    opacity: 0,
+    y: 20,
+    ease: 'power3.out'
+  }, 0.4)
+
+  // Animar descripción
+  tl.from('.howitworks-description', {
+    duration: 0.8,
+    opacity: 0,
+    y: 15,
+    ease: 'power3.out'
+  }, 0.6)
+
+  // Animar tarjetas de pasos
+  gsap.set('.step-card', { opacity: 0, y: 50, scale: 0.9 })
+  tl.to('.step-card', {
+    duration: 0.8,
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    stagger: 0.2,
+    ease: 'back.out(1.5)'
+  }, 0.8)
+
+  // Animar números de pasos con efecto de conteo
+  tl.from('.step-number', {
+    duration: 0.8,
+    opacity: 0,
+    scale: 0,
+    rotation: -180,
+    stagger: 0.2,
+    ease: 'back.out(1.7)'
+  }, 0.9)
+
+  // Animar botón CTA
+  gsap.set('.howitworks-button', { opacity: 0, y: 30, scale: 0.8 })
+  tl.to('.howitworks-button', {
+    duration: 0.6,
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    ease: 'back.out(1.5)'
+  }, 1.3)
+
+  // Efecto hover en las tarjetas
+  const cards = gsap.utils.toArray('.step-card') as HTMLElement[]
+  cards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, { y: -15, duration: 0.3, ease: 'power2.out' })
+      gsap.to(card.querySelector('.step-number'), { scale: 1.15, duration: 0.3, ease: 'back.out(1.7)' })
+    })
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { y: 0, duration: 0.3, ease: 'power2.out' })
+      gsap.to(card.querySelector('.step-number'), { scale: 1, duration: 0.3, ease: 'back.out(1.7)' })
+    })
+  })
+
+  // Efecto pulsante en el botón
+  gsap.to('.howitworks-button', {
+    duration: 2,
+    boxShadow: '0 0 30px rgba(143, 207, 154, 0.8)',
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  })
+}
 </script>
 
 <template>
   <section 
     class="w-full py-16 sm:py-20 relative"
+    data-howitworks-section
     style="
       background-image: url('/BgHowItWorks01.jpg');
       background-size: cover;
@@ -37,16 +147,16 @@ const steps = [
     <div class="w-full px-6 sm:px-12 lg:px-16 relative z-20">
       <!-- Header Section -->
       <div class="text-center">
-        <p class="text-sm font-medium text-[#f7f7ad] uppercase tracking-widest mb-4">
+        <p class="howitworks-label text-sm font-medium text-[#f7f7ad] uppercase tracking-widest mb-4">
           Cómo funciona
         </p>
-        <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-4">
+        <h2 class="howitworks-title text-4xl sm:text-5xl font-black text-white leading-tight mb-4">
           Cotizá tu seguro<br><span style="color: #8fcf9a;">en menos de 1 minuto.</span>
         </h2>
-        <p class="text-xl font-medium mb-6 text-white">
+        <p class="howitworks-subtitle text-xl font-medium mb-6 text-white">
           Desde WhatsApp. Sin formularios.
         </p>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto">
+        <p class="howitworks-description text-lg text-white/70 max-w-2xl mx-auto">
           Compará coberturas al instante con nuestro asistente inteligente.
         </p>
       </div>
@@ -86,7 +196,7 @@ const steps = [
 
           <!-- CTA Button -->
           <div class="flex justify-center mt-8">
-            <button class="button-glow">
+            <button class="howitworks-button button-glow">
               <div class="button-inner">
                 Comenzar ahora
               </div>

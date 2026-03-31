@@ -1,5 +1,7 @@
-<script setup>
+<script setup lang="ts">
 import MarqueeVertical from './MarqueeVertical.vue'
+import gsap from 'gsap'
+import { onMounted } from 'vue'
 
 const reasons = [
   {
@@ -33,6 +35,41 @@ const reasons = [
     description: 'Desde cualquier dispositivo, en cualquier momento, en cualquier lugar.',
   },
 ]
+
+onMounted(() => {
+  setTimeout(() => {
+    animateTextContent()
+  }, 100)
+})
+
+const animateTextContent = () => {
+  // Animate label
+  gsap.from('.ventajas-label', {
+    opacity: 0,
+    y: 20,
+    duration: 0.6,
+    ease: 'power2.out',
+  })
+
+  // Animate title
+  gsap.from('.ventajas-title', {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    delay: 0.1,
+    ease: 'power2.out',
+  })
+
+  // Animate description
+  gsap.from('.ventajas-description', {
+    opacity: 0,
+    y: 20,
+    duration: 0.7,
+    delay: 0.2,
+    ease: 'power2.out',
+  })
+}
+
 </script>
 
 <template>
@@ -57,13 +94,13 @@ const reasons = [
         
         <!-- Left Column: Text Content -->
         <div class="flex-1 flex flex-col justify-center">
-          <p class="text-sm font-medium text-[#f7f7ad] uppercase tracking-widest mb-4">
+          <p class="ventajas-label text-sm font-medium text-[#f7f7ad] uppercase tracking-widest mb-4">
             Ventajas
           </p>
-          <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-6 whitespace-nowrap">
+          <h2 class="ventajas-title text-4xl sm:text-5xl font-black text-white leading-tight mb-6 whitespace-nowrap">
             Por qué <span style="color: #8fcf9a;">elegirnos</span>
           </h2>
-          <p class="text-lg text-white/70 leading-relaxed max-w-sm">
+          <p class="ventajas-description text-lg text-white/70 leading-relaxed max-w-sm">
             Somos tu aliado en la búsqueda del mejor seguro vehicular con tecnología inteligente y atención personalizada.
           </p>
         </div>

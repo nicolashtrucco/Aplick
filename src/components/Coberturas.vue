@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import gsap from 'gsap'
+import { onMounted } from 'vue'
 import Marquee from './ui/marquee/Marquee.vue'
 import SeguroCard from './SeguroCard.vue'
 import { segurosIndividuales, segurosCorporativos } from '@/data/seguros'
@@ -9,10 +11,67 @@ const activeTab = ref<'individuales' | 'corporativos'>('individuales')
 const segurosActuales = () => {
   return activeTab.value === 'individuales' ? segurosIndividuales : segurosCorporativos
 }
+
+onMounted(() => {
+  // Usar Intersection Observer para animar cuando la sección es visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        entry.target.classList.add('animated')
+        animateCoberturas()
+      }
+    })
+  }, { threshold: 0.2 })
+
+  const section = document.querySelector('[data-coberturas-section]')
+  if (section) {
+    observer.observe(section)
+  }
+})
+
+const animateCoberturas = () => {
+  const tl = gsap.timeline()
+
+  // Animar el título
+  tl.from('.coberturas-title', {
+    duration: 0.8,
+    opacity: 0,
+    y: 30,
+    ease: 'power3.out'
+  }, 0)
+
+  // Animar la descripción
+  tl.from('.coberturas-description', {
+    duration: 0.8,
+    opacity: 0,
+    y: 20,
+    ease: 'power3.out'
+  }, 0.2)
+
+  // Animar las tarjetas con efecto de entrada escalonado
+  tl.from('.cobertura-card', {
+    duration: 0.8,
+    opacity: 0,
+    y: 40,
+    scale: 0.9,
+    stagger: 0.2,
+    ease: 'back.out(1.5)'
+  }, 0.4)
+
+  // Efecto hover interactivo en las tarjetas
+  gsap.utils.toArray('.cobertura-card').forEach((card: any) => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, { y: -10, duration: 0.3, ease: 'power2.out' })
+    })
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { y: 0, duration: 0.3, ease: 'power2.out' })
+    })
+  })
+}
 </script>
 
 <template>
-  <section class="w-full py-4 pb-0">
+  <section class="w-full py-4 pb-0" data-coberturas-section>
     <div class="w-full">
       <!-- Main Container with Background Image -->
       <div 
@@ -28,10 +87,10 @@ const segurosActuales = () => {
         <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none z-10"></div>
         <!-- Header -->
         <div class="text-center mb-8 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
+          <h2 class="coberturas-title text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
             Nuestras <span style="color: #8fcf9a;">Coberturas</span>
           </h2>
-          <p class="text-white/80 text-base md:text-lg">
+          <p class="coberturas-description text-white/80 text-base md:text-lg">
             Tenemos la cobertura que necesitás para cada momento de tu vida. Desde seguros individuales hasta soluciones corporativas, te ofrecemos opciones adaptadas a tus necesidades.
           </p>
         </div>
@@ -93,23 +152,29 @@ const segurosActuales = () => {
         <div class="relative z-20 px-4 sm:px-6 lg:px-8 md:mt-20 mb-32 md:mb-20">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- Card 1: Seguro Auto -->
-            <SeguroCard
-              title="Seguro Automotor"
-              icon="/3d-car.png"
-              iconSize="h-32 w-32"
-            />
+            <div class="cobertura-card">
+              <SeguroCard
+                title="Seguro Automotor"
+                icon="/3d-car.png"
+                iconSize="h-32 w-32"
+              />
+            </div>
             <!-- Card 2: Seguro Hogar -->
-            <SeguroCard
-              title="Seguro Hogar"
-              icon="/documento.webp"
-              iconSize="h-24 w-24"
-            />
+            <div class="cobertura-card">
+              <SeguroCard
+                title="Seguro Hogar"
+                icon="/documento.webp"
+                iconSize="h-24 w-24"
+              />
+            </div>
             <!-- Card 3: Seguro ART -->
-            <SeguroCard
-              title="Seguro Accidente Personal"
-              icon="/fabrica.webp"
-              iconSize="h-32 w-32"
-            />
+            <div class="cobertura-card">
+              <SeguroCard
+                title="Seguro Accidente Personal"
+                icon="/fabrica.webp"
+                iconSize="h-32 w-32"
+              />
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,68 @@
 <script setup>
+import gsap from 'gsap'
+import { onMounted } from 'vue'
 import Aurora from './Aurora/Aurora.vue'
+
+onMounted(() => {
+  // Timeline principal de animaciones
+  const tl = gsap.timeline()
+
+  // Establecer estado inicial de los botones
+  gsap.set('.hero-buttons button', { opacity: 0, scale: 0.8 })
+
+  // Animar el título con efecto de escritura y fade
+  tl.from('.hero-title h1 span', {
+    duration: 0.8,
+    opacity: 0,
+    y: 30,
+    stagger: 0.1,
+    ease: 'power3.out'
+  }, 0)
+
+  // Animar la descripción con fade y slide
+  tl.from('.hero-description', {
+    duration: 0.8,
+    opacity: 0,
+    y: 20,
+    ease: 'power3.out'
+  }, 0.3)
+
+  // Animar cada botón individualmente
+  tl.to('.hero-buttons button', {
+    duration: 0.6,
+    opacity: 1,
+    scale: 1,
+    stagger: 0.15,
+    ease: 'back.out(1.7)'
+  }, 0.6)
+
+  // Animación flotante continua en los botones
+  gsap.to('.hero-buttons button:nth-child(1)', {
+    duration: 3,
+    y: -15,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  })
+
+  gsap.to('.hero-buttons button:nth-child(2)', {
+    duration: 3.5,
+    y: -12,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut',
+    delay: 0.2
+  })
+
+  // Glow effect en el botón secundario
+  gsap.to('.button-glow', {
+    duration: 2,
+    boxShadow: '0 0 20px rgba(143, 207, 154, 0.6)',
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  })
+})
 </script>
 
 <template>
