@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from 'gsap'
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { nextTick, ref, watch, onMounted, onUnmounted } from 'vue'
 
 const isOpen = ref(false)
 const activeSection = ref('inicio')
@@ -17,7 +17,7 @@ const isLinkActive = (sectionId: string) => {
   return activeSection.value === sectionId
 }
 
-const handleLinkClick = (
+const handleLinkClick = async (
   sectionId: string,
   event?: MouseEvent,
   shouldCloseMenu = false,
@@ -41,6 +41,7 @@ const handleLinkClick = (
 
   if (shouldCloseMenu) {
     closeMenu()
+    await nextTick()
   }
 
   const targetSection = document.getElementById(sectionId)
@@ -48,14 +49,11 @@ const handleLinkClick = (
 
   const navbar = document.querySelector('nav')
   const navbarHeight = navbar?.getBoundingClientRect().height ?? 0
-  const sectionTop =
-    window.scrollY +
-    targetSection.getBoundingClientRect().top -
-    navbarHeight -
-    20
+  const sectionPosition = targetSection.offsetTop
+  const scrollTarget = Math.max(sectionPosition - navbarHeight - 20, 0)
 
   window.scrollTo({
-    top: Math.max(sectionTop, 0),
+    top: scrollTarget,
     behavior: 'smooth',
   })
 
