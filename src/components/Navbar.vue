@@ -4,6 +4,7 @@ import { nextTick, ref, watch, onMounted, onUnmounted } from 'vue'
 
 const isOpen = ref(false)
 const activeSection = ref('inicio')
+let scrollY = 0
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -82,6 +83,17 @@ onMounted(() => {
   
   onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
+    
+    // Cleanup: asegurarse de que los estilos se limpien al desmontar
+    if (isOpen.value) {
+      document.documentElement.style.overflow = ''
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
+      document.body.style.width = ''
+    }
   })
 })
 
@@ -155,9 +167,17 @@ const animateNavbarOnLoad = () => {
 }
 
 watch(isOpen, (newVal) => {
-  document.body.style.overflow = newVal ? 'hidden' : 'auto'
-
   if (newVal) {
+    scrollY = window.scrollY
+
+    document.documentElement.style.overflow = 'hidden'
+    document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.left = '0'
+    document.body.style.right = '0'
+    document.body.style.width = '100%'
+
     setTimeout(() => {
       const mobileNavContainer = document.querySelector('[data-mobile-nav]')
       if (mobileNavContainer) {
@@ -203,6 +223,16 @@ watch(isOpen, (newVal) => {
         }
       }
     }, 100)
+  } else {
+    document.documentElement.style.overflow = ''
+    document.body.style.overflow = ''
+    document.body.style.position = ''
+    document.body.style.top = ''
+    document.body.style.left = ''
+    document.body.style.right = ''
+    document.body.style.width = ''
+
+    window.scrollTo(0, scrollY)
   }
 }, { flush: 'post' })
 </script>
