@@ -110,7 +110,7 @@ const animateAboutAplick = () => {
 
 <template>
   <section 
-    class="w-full py-16 sm:py-20 relative"
+    class="w-full py-0 sm:py-16 lg:py-20 relative"
     data-about-section
     style="
       background-image: url('/BgAboutAplick01.jpg');

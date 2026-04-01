@@ -74,7 +74,7 @@ const animateTextContent = () => {
 
 <template>
   <section 
-    class="w-full py-16 sm:py-20 relative"
+    class="w-full py-0 sm:py-16 lg:py-20 relative"
     style="
       background-image: url('/BgPorqueElegirnos.jpg');
       background-size: cover;

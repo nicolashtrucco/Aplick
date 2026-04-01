@@ -86,7 +86,7 @@ const animateCoberturas = () => {
         <!-- Top Black Gradient Overlay -->
         <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none z-10"></div>
         <!-- Header -->
-        <div class="text-center mb-8 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div class="text-center mb-8 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 sm:pt-16">
           <h2 class="coberturas-title text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
             Nuestras <span style="color: #8fcf9a;">Coberturas</span>
           </h2>
